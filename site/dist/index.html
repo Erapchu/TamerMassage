@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Массаж у Тамера — сертифицированного мастера с опытом более 12 лет. Индивидуальная работа с телом и аппаратные процедуры.">
+  <meta name="theme-color" content="#123d2d">
+  <title>Тамер — массаж и работа с телом</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23123d2d'/%3E%3Cpath d='M16 22h32M32 22v27' stroke='%23e7f0d0' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M18 15c5-5 11-5 14 0-6 2-10 2-14 0Z' fill='%2399c269'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="Тамер — на главную">
+      <span class="brand-mark">Т</span>
+      <span class="brand-copy"><b>Тамер</b><small>массаж &amp; восстановление</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+      <a href="#about">О мастере</a>
+      <a href="#services">Услуги</a>
+      <a href="#session">Как проходит сеанс</a>
+      <a class="nav-cta" href="#contact">Записаться</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Сертифицированный мастер массажа</p>
+        <h1>Тело умеет<br><em>восстанавливаться.</em></h1>
+        <p class="hero-lead">Помогаю снять напряжение, вернуть лёгкость движения и почувствовать себя лучше — внимательно и без шаблонных решений.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#contact">Обсудить сеанс <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#services">Посмотреть услуги <span aria-hidden="true">↓</span></a>
+        </div>
+        <dl class="hero-facts" aria-label="Коротко о мастере">
+          <div><dt>12+</dt><dd>лет практики</dd></div>
+          <div><dt>1:1</dt><dd>индивидуальный подход</dd></div>
+          <div><dt>90</dt><dd>минут на полный сеанс</dd></div>
+        </dl>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrap">
+          <img src="assets/Tamer.jpg" alt="Массажист Тамер" width="902" height="1080">
+        </div>
+        <div class="hero-note"><span>01</span> Спокойная работа<br>с вниманием к телу</div>
+      </div>
+      <p class="hero-side-note" aria-hidden="true">массаж · восстановление · движение</p>
+    </section>
+
+    <section class="intro section" id="about">
+      <div class="section-label"><span>01</span> О мастере</div>
+      <div class="intro-heading">
+        <p class="eyebrow">Здравствуйте, меня зовут Тамер</p>
+        <h2>Не просто массаж —<br>вдумчивая работа с вашим запросом.</h2>
+      </div>
+      <div class="intro-body">
+        <p>Более 12 лет я помогаю людям справляться с болью и мышечным напряжением. Основам профессии я учился у немецкого профессора в Хургаде, а квалификацию подтвердил сертификатом Американского университета в Каире.</p>
+        <p>В работе использую массажные и мануальные техники. После сеанса даю понятные рекомендации: какие упражнения добавить в повседневную жизнь и как поддержать результат.</p>
+      </div>
+      <blockquote>
+        <p>«Эффект массажа — естественная восстанавливающая сила организма, сила жизни»</p>
+        <cite>Гиппократ</cite>
+      </blockquote>
+    </section>
+
+    <section class="services section" id="services">
+      <div class="section-label section-label-light"><span>02</span> Услуги</div>
+      <div class="services-head">
+        <h2>Подходящий формат<br>для вашего тела</h2>
+        <p>Начинаем не с готовой схемы, а с разговора: что беспокоит, где чувствуется напряжение и какого результата вы ждёте.</p>
+      </div>
+
+      <div class="price-tabs" data-tabs>
+        <div class="tab-list" role="tablist" aria-label="Категории услуг">
+          <button role="tab" id="tab-massage" aria-controls="panel-massage" aria-selected="true">Массаж</button>
+          <button role="tab" id="tab-apparatus" aria-controls="panel-apparatus" aria-selected="false" tabindex="-1">Аппаратные процедуры</button>
+          <button role="tab" id="tab-programs" aria-controls="panel-programs" aria-selected="false" tabindex="-1">Комплексы</button>
+        </div>
+
+        <div class="tab-panel" id="panel-massage" role="tabpanel" aria-labelledby="tab-massage">
+          <article class="service-card featured">
+            <div class="service-number">01</div>
+            <div><h3>Лечебный массаж</h3><p>Полный сеанс с проработкой зон напряжения и вниманием к вашему самочувствию.</p></div>
+            <div class="service-price"><strong>3 200 ₽</strong><span>90 минут</span></div>
+          </article>
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <div><h3>Лечебный плюс</h3><p>Расширенный формат для более глубокой и продолжительной работы с телом.</p></div>
+            <div class="service-price"><strong>3 500 ₽</strong><span>90 минут</span></div>
+          </article>
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <div><h3>Антицеллюлитный массаж</h3><p>Массаж всего тела с профессиональными средствами Aravia.</p></div>
+            <div class="service-price"><strong>3 500 ₽</strong><span>90 минут</span></div>
+          </article>
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <div><h3>Детский массаж</h3><p>Бережный формат для детей до 10 лет.</p></div>
+            <div class="service-price"><strong>2 000 ₽</strong><span>60 минут</span></div>
+          </article>
+        </div>
+
+        <div class="tab-panel" id="panel-apparatus" role="tabpanel" aria-labelledby="tab-apparatus" hidden>
+          <article class="service-card featured">
+            <div class="service-number">01</div>
+            <div><h3>Эндосфера — лицо</h3><p>Виброкомпрессионная процедура для тонуса, микроциркуляции и ухода за кожей.</p></div>
+            <div class="service-price"><strong>1 600 ₽</strong><span>30 минут</span></div>
+          </article>
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <div><h3>Эндосфера — тело</h3><p>Работа с мышечной усталостью, тонусом и контурами тела.</p></div>
+            <div class="service-price"><strong>2 500 ₽</strong><span>45 минут</span></div>
+          </article>
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <div><h3>HI-FEM — живот</h3><p>Высокоинтенсивная электромагнитная стимуляция для тонуса мышц.</p></div>
+            <div class="service-price"><strong>1 500 ₽</strong><span>30 минут</span></div>
+          </article>
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <div><h3>HI-FEM — ягодицы / руки</h3><p>Локальная стимуляция выбранной зоны.</p></div>
+            <div class="service-price"><strong>от 1 800 ₽</strong><span>30 минут</span></div>
+          </article>
+        </div>
+
+        <div class="tab-panel" id="panel-programs" role="tabpanel" aria-labelledby="tab-programs" hidden>
+          <article class="service-card featured">
+            <div class="service-number">01</div>
+            <div><h3>Лечебный + EMS + HI-FEM + RF</h3><p>Массаж и аппаратная работа с одной выбранной зоной.</p></div>
+            <div class="service-price"><strong>4 500 ₽</strong><span>90 минут</span></div>
+          </article>
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <div><h3>Лечебный + эндосфера</h3><p>Ручная и аппаратная работа в одном полноценном сеансе.</p></div>
+            <div class="service-price"><strong>5 000 ₽</strong><span>90 минут</span></div>
+          </article>
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <div><h3>Живот + эндосфера лица</h3><p>EMS, HI-FEM и RF для тела плюс аппаратный уход для лица.</p></div>
+            <div class="service-price"><strong>3 200 ₽</strong><span>60 минут</span></div>
+          </article>
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <div><h3>Комплекс на тело и лицо</h3><p>Выбранная зона тела и расширенная процедура эндосферы.</p></div>
+            <div class="service-price"><strong>5 500 ₽</strong><span>90 минут</span></div>
+          </article>
+        </div>
+        <p class="price-note">Точный формат процедуры Тамер подбирает после короткой консультации.</p>
+      </div>
+    </section>
+
+    <section class="session section" id="session">
+      <div class="section-label"><span>03</span> Ваш сеанс</div>
+      <div class="session-grid">
+        <div class="session-photo">
+          <img src="assets/massage_start.jpg" alt="Тамер проводит сеанс массажа в светлом кабинете" width="1080" height="795" loading="lazy">
+          <span class="image-caption">Спокойный кабинет · музыка · удобный стол</span>
+        </div>
+        <div class="session-content">
+          <p class="eyebrow">Всё начинается с разговора</p>
+          <h2>Понятно.<br>Бережно.<br>Постепенно.</h2>
+          <ol class="steps">
+            <li><span>01</span><div><h3>Определяем запрос</h3><p>Обсуждаем, что беспокоит, где ощущается боль или скованность и как давно.</p></div></li>
+            <li><span>02</span><div><h3>Снимаем напряжение</h3><p>Начинаем с широких плавных движений, чтобы успокоить нервную систему.</p></div></li>
+            <li><span>03</span><div><h3>Работаем глубже</h3><p>Давление увеличивается постепенно — ровно настолько, насколько это комфортно.</p></div></li>
+            <li><span>04</span><div><h3>Закрепляем результат</h3><p>После сеанса вы получаете рекомендации по воде, движению и упражнениям.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="equipment section" aria-labelledby="equipment-title">
+      <div class="section-label"><span>04</span> Технологии</div>
+      <div class="equipment-copy">
+        <p class="eyebrow">Когда ручной работы недостаточно</p>
+        <h2 id="equipment-title">Аппаратные процедуры<br>дополняют массаж.</h2>
+        <p>EMS, HI-FEM, RF и эндосфера помогают сфокусироваться на выбранной зоне, поддержать тонус мышц и дополнить программу работы с телом.</p>
+      </div>
+      <div class="equipment-gallery">
+        <figure class="equipment-main"><img src="assets/emsculpt3.jpg" alt="Аппаратная процедура для мышц живота" width="1024" height="981" loading="lazy"></figure>
+        <figure><img src="assets/emsculpt.jpg" alt="Аппарат EMSculpt во время процедуры" width="1048" height="965" loading="lazy"></figure>
+        <figure><img src="assets/emsculpt2.jpg" alt="Аппаратная процедура для ягодичных мышц" width="1079" height="857" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section class="roy section" aria-labelledby="roy-title">
+      <div class="roy-collage">
+        <img class="roy-dog" src="assets/Roy_dog.jpg" alt="Овчарка Рой в лесу" width="1200" height="1600" loading="lazy">
+        <img class="roy-together" src="assets/Roy_and_Tamer.jpg" alt="Тамер и его собака Рой" width="768" height="1024" loading="lazy">
+      </div>
+      <div class="roy-copy">
+        <p class="eyebrow">Для тех, кто дочитал до конца</p>
+        <h2 id="roy-title">Знакомьтесь,<br>это Рой.</h2>
+        <p>Верный друг, напарник по прогулкам и главный специалист по восстановлению после рабочего дня. Обычно Рой рядом во время сеанса, но если вам так будет спокойнее, на время массажа он с удовольствием побудет в другом месте.</p>
+        <span class="paw" aria-hidden="true">● ● ●<br>◖</span>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="contact-inner">
+        <p class="eyebrow">Запись и консультация</p>
+        <h2>Давайте начнём<br>с вашего запроса.</h2>
+        <p>Напишите Тамеру в личные сообщения: расскажите, что беспокоит, и он поможет выбрать подходящий формат и время.</p>
+        <a class="button button-light" href="#contact-details" id="contact-button">Как записаться <span aria-hidden="true">↗</span></a>
+        <div class="contact-details" id="contact-details" tabindex="-1">
+          <strong>Запись — в личных сообщениях</strong>
+          <span>Контакт для связи будет добавлен перед публикацией сайта.</span>
+        </div>
+      </div>
+      <div class="contact-orbit" aria-hidden="true"><span>12+</span><small>лет заботы<br>о движении</small></div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand brand-footer" href="#top"><span class="brand-mark">Т</span><span class="brand-copy"><b>Тамер</b><small>массаж &amp; восстановление</small></span></a>
+    <p>Индивидуальная работа с телом</p>
+    <p>© <span id="year"></span> Тамер</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
