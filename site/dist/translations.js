@@ -140,6 +140,14 @@ document.querySelectorAll('[aria-label], img[alt], meta[name="description"]').fo
 });
 const originalTitle = document.title;
 const languageSelect = document.querySelector('#language-select');
+const languagePicker = document.querySelector('.language-picker');
+const languageOptions = document.querySelector('#language-options');
+const languageButtons = [...languageOptions.querySelectorAll('[data-language]')];
+
+function closeLanguagePicker() {
+  languageOptions.hidden = true;
+  languageSelect.setAttribute('aria-expanded', 'false');
+}
 
 function updateMenuLabel() {
   const button = document.querySelector('.menu-toggle');
@@ -155,12 +163,46 @@ function setLanguage(language) {
   });
   translatedAttributes.forEach(({ element, attribute, source }) => element.setAttribute(attribute, translate(source)));
   document.title = translate(originalTitle);
-  languageSelect.value = currentLanguage;
+  const selectedLanguage = languageButtons.find((button) => button.dataset.language === currentLanguage);
+  languageSelect.querySelector('.language-flag').src = selectedLanguage.querySelector('img').getAttribute('src');
+  const languageName = languageSelect.querySelector('.language-name');
+  languageName.textContent = selectedLanguage.querySelector('span').textContent;
+  languageName.lang = currentLanguage;
+  languageButtons.forEach((button) => button.setAttribute('aria-pressed', String(button === selectedLanguage)));
   updateMenuLabel();
   try { localStorage.setItem('tamer-language', currentLanguage); } catch { /* Storage may be disabled. */ }
 }
 
-languageSelect.addEventListener('change', () => setLanguage(languageSelect.value));
+languageSelect.addEventListener('click', () => {
+  const open = languageOptions.hidden;
+  languageOptions.hidden = !open;
+  languageSelect.setAttribute('aria-expanded', String(open));
+});
+languageButtons.forEach((button) => button.addEventListener('click', () => {
+  setLanguage(button.dataset.language);
+  closeLanguagePicker();
+  languageSelect.focus();
+}));
+languagePicker.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeLanguagePicker();
+    languageSelect.focus();
+  }
+  if (['ArrowDown', 'ArrowUp'].includes(event.key)) {
+    event.preventDefault();
+    languageOptions.hidden = false;
+    languageSelect.setAttribute('aria-expanded', 'true');
+    const index = languageButtons.indexOf(document.activeElement);
+    const next = index < 0 ? languageButtons.findIndex((button) => button.dataset.language === currentLanguage) : (index + (event.key === 'ArrowDown' ? 1 : -1) + languageButtons.length) % languageButtons.length;
+    languageButtons[next].focus();
+  }
+});
+document.addEventListener('click', (event) => {
+  if (!languagePicker.contains(event.target)) closeLanguagePicker();
+});
+languagePicker.addEventListener('focusout', (event) => {
+  if (!languagePicker.contains(event.relatedTarget)) closeLanguagePicker();
+});
 let savedLanguage = 'ru';
 try { savedLanguage = localStorage.getItem('tamer-language') || 'ru'; } catch { /* Russian remains the default. */ }
 setLanguage(savedLanguage);
