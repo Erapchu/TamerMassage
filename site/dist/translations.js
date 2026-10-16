@@ -102,6 +102,9 @@ const translationRows = [
   ['Коротко о мастере', 'Tamer at a glance', 'نبذة عن تامر'],
   ['Категории услуг', 'Service categories', 'فئات الخدمات'],
   ['Язык сайта', 'Site language', 'لغة الموقع'],
+  ['Тема сайта', 'Site theme', 'مظهر الموقع'],
+  ['Светлая', 'Light', 'فاتح'],
+  ['Тёмная', 'Dark', 'داكن'],
   ['Массажист Тамер', 'Tamer, massage therapist', 'تامر، أخصائي التدليك'],
   ['Тамер проводит сеанс массажа в светлом кабинете', 'Tamer giving a massage in a bright treatment room', 'تامر يقدم جلسة تدليك في غرفة مضيئة'],
   ['Аппаратная процедура для мышц живота', 'Device treatment for abdominal muscles', 'جلسة بالأجهزة لعضلات البطن'],
@@ -124,7 +127,7 @@ const translatedNodes = [];
 const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
 while (walker.nextNode()) {
   const node = walker.currentNode;
-  if (node.parentElement.closest('script, style, option')) continue;
+  if (node.parentElement.closest('script, style, #language-select option')) continue;
   if (translations.has(node.textContent.trim())) {
     translatedNodes.push({ node, source: node.textContent.trim(), original: node.textContent });
   }

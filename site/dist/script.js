@@ -1,5 +1,9 @@
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
+document.querySelectorAll('[data-theme-option]').forEach((button) => {
+  button.addEventListener('click', () => setTheme(button.dataset.themeOption));
+});
+setTheme(document.documentElement.dataset.theme);
 
 menuButton?.addEventListener('click', () => {
   const open = menuButton.getAttribute('aria-expanded') === 'true';
