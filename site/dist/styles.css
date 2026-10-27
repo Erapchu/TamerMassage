@@ -186,10 +186,13 @@ html[dir="rtl"] .image-caption { right: auto; left: -28px; }
 .contact-inner > p:not(.eyebrow) { max-width: 580px; margin-bottom: 34px; color: rgba(255,255,255,.67); }
 .button-light { color: var(--forest-deep); background: var(--lime); }
 .contact-details { display: none; margin-top: 20px; padding: 16px 20px; width: min(100%, 520px); border: 1px solid rgba(255,255,255,.22); border-radius: 14px; }
-.contact-details.visible { display: grid; }
+.contact-details.visible { display: grid; gap: 4px; }
 .contact-details span { color: rgba(255,255,255,.58); font-size: .78rem; }
 .contact-details .contact-phone { color: inherit; font-size: 1.12rem; letter-spacing: .02em; text-decoration: none; }
 .contact-details .contact-phone:hover, .contact-details .contact-phone:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+.contact-links a { display: inline-flex; align-items: center; padding: 7px 16px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; color: white; font-size: .82rem; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+.contact-links a:hover, .contact-links a:focus-visible { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.55); }
 .contact-orbit { justify-self: end; width: min(32vw, 360px); aspect-ratio: 1; border: 1px solid rgba(216,230,164,.55); border-radius: 50%; display: grid; place-items: center; align-content: center; text-align: center; }
 .contact-orbit span { font-family: "Prata", Georgia, serif; color: var(--lime); font-size: clamp(4rem, 8vw, 7rem); line-height: 1; }
 .contact-orbit small { margin-top: 18px; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .16em; }
