@@ -188,6 +188,8 @@ html[dir="rtl"] .image-caption { right: auto; left: -28px; }
 .contact-details { display: none; margin-top: 20px; padding: 16px 20px; width: min(100%, 520px); border: 1px solid rgba(255,255,255,.22); border-radius: 14px; }
 .contact-details.visible { display: grid; }
 .contact-details span { color: rgba(255,255,255,.58); font-size: .78rem; }
+.contact-details .contact-phone { color: inherit; font-size: 1.12rem; letter-spacing: .02em; text-decoration: none; }
+.contact-details .contact-phone:hover, .contact-details .contact-phone:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 .contact-orbit { justify-self: end; width: min(32vw, 360px); aspect-ratio: 1; border: 1px solid rgba(216,230,164,.55); border-radius: 50%; display: grid; place-items: center; align-content: center; text-align: center; }
 .contact-orbit span { font-family: "Prata", Georgia, serif; color: var(--lime); font-size: clamp(4rem, 8vw, 7rem); line-height: 1; }
 .contact-orbit small { margin-top: 18px; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .16em; }
