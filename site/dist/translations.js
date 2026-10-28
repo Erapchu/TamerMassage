@@ -54,6 +54,7 @@ const translationRows = [
   ['HI-FEM — ягодицы / руки', 'HI-FEM — glutes / arms', 'HI-FEM — الأرداف / الذراعان'],
   ['Локальная стимуляция выбранной зоны.', 'Targeted stimulation of your chosen area.', 'تحفيز موضعي للمنطقة المختارة.'],
   ['от 1 800 ₽', 'from 1 800 ₽', 'ابتداءً من 1 800 ₽'],
+  ['от 3 500 ₽', 'from 3 500 ₽', 'ابتداءً من 3 500 ₽'],
   ['Лечебный + EMS + HI-FEM + RF', 'Therapeutic + EMS + HI-FEM + RF', 'تدليك علاجي + EMS + HI-FEM + RF'],
   ['Массаж и аппаратная работа с одной выбранной зоной.', 'Massage and device treatment for one chosen area.', 'تدليك وجلسة بالأجهزة لمنطقة واحدة مختارة.'],
   ['Лечебный + эндосфера', 'Therapeutic + Endospheres', 'تدليك علاجي + إندوسفير'],
