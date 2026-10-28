@@ -37,8 +37,6 @@ const translationRows = [
   ['Полный сеанс с проработкой зон напряжения и вниманием к вашему самочувствию.', 'A full session focused on areas of tension and your wellbeing.', 'جلسة كاملة تركز على مناطق التوتر مع الاهتمام براحتك.'],
   ['Лечебный плюс', 'Therapeutic Plus', 'تدليك علاجي بلس'],
   ['Расширенный формат для более глубокой и продолжительной работы с телом.', 'An extended approach for deeper, sustained bodywork.', 'جلسة موسعة للعمل على الجسم بعمق أكبر وعناية مستمرة.'],
-  ['Антицеллюлитный массаж', 'Anti-cellulite massage', 'تدليك مضاد للسيلوليت'],
-  ['Массаж всего тела с профессиональными средствами Aravia.', 'Full-body massage using professional Aravia products.', 'تدليك لكامل الجسم باستخدام منتجات Aravia الاحترافية.'],
   ['Детский массаж', 'Children’s massage', 'تدليك للأطفال'],
   ['Бережный формат для детей до 10 лет.', 'A gentle approach for children under 10.', 'عناية لطيفة للأطفال دون سن العاشرة.'],
   ['90 минут', '90 minutes', '90 دقيقة'],
