@@ -185,6 +185,9 @@ html[dir="rtl"] .image-caption { right: auto; left: -28px; }
 .contact h2 { max-width: 900px; }
 .contact-inner > p:not(.eyebrow) { max-width: 580px; margin-bottom: 34px; color: rgba(255,255,255,.67); }
 .button-light { color: var(--forest-deep); background: var(--lime); }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.button-outline { color: white; background: transparent; border: 1px solid rgba(255,255,255,.42); }
+.button-outline:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.7); }
 .contact-details { display: none; margin-top: 20px; padding: 16px 20px; width: min(100%, 520px); border: 1px solid rgba(255,255,255,.22); border-radius: 14px; }
 .contact-details.visible { display: grid; gap: 4px; }
 .contact-details span { color: rgba(255,255,255,.58); font-size: .78rem; }

@@ -223,7 +223,10 @@
         <p class="eyebrow">Запись и консультация</p>
         <h2>Давайте начнём<br>с вашего запроса.</h2>
         <p>Позвоните Тамеру: расскажите, что беспокоит, и он поможет выбрать подходящий формат и время.</p>
-        <a class="button button-light" href="#contact-details" id="contact-button">Как записаться <span aria-hidden="true">↗</span></a>
+        <div class="contact-actions">
+          <a class="button button-light" href="#contact-details" id="contact-button" aria-expanded="false" aria-controls="contact-details">Как записаться <span aria-hidden="true">↗</span></a>
+          <button class="button button-outline" type="button" id="address-button" aria-expanded="false" aria-controls="address-details">Адрес <span aria-hidden="true">↗</span></button>
+        </div>
         <div class="contact-details" id="contact-details" tabindex="-1">
           <strong><a class="contact-phone" href="tel:+79818554031" dir="ltr">+7 981 855-40-31</a></strong>
           <span>Позвоните, чтобы записаться.</span>
@@ -232,6 +235,10 @@
             <li><a href="https://vk.com/tamer_massage" target="_blank" rel="noopener noreferrer">VK</a></li>
             <li><a href="https://max.ru/u/f9LHodD0cOLDI2wrZfigZPBUtih61NG9aYY1iOvPqY6wb19BAAxeo-qLFcI" target="_blank" rel="noopener noreferrer">MAX</a></li>
           </ul>
+        </div>
+        <div class="contact-details address-details" id="address-details" tabindex="-1">
+          <strong>Приморский район.</strong>
+          <span>Комендантский проспект</span>
         </div>
       </div>
       <div class="contact-orbit" aria-hidden="true"><span>12+</span><small>лет заботы<br>о движении</small></div>

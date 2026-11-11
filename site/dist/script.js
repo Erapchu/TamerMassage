@@ -56,7 +56,16 @@ const contactDetails = document.querySelector('#contact-details');
 contactButton?.addEventListener('click', (event) => {
   event.preventDefault();
   contactDetails.classList.add('visible');
+  contactButton.setAttribute('aria-expanded', 'true');
   contactDetails.focus();
+});
+
+const addressButton = document.querySelector('#address-button');
+const addressDetails = document.querySelector('#address-details');
+addressButton?.addEventListener('click', () => {
+  const visible = addressDetails.classList.toggle('visible');
+  addressButton.setAttribute('aria-expanded', String(visible));
+  if (visible) addressDetails.focus();
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
