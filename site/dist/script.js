@@ -68,4 +68,28 @@ addressButton?.addEventListener('click', () => {
   if (visible) addressDetails.focus();
 });
 
+const showcaseVideo = document.querySelector('.showcase-video');
+if (showcaseVideo) {
+  // Keep the clip silent and play it only while it is on screen, so it never
+  // downloads for visitors who stay on the first screen.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    showcaseVideo.controls = true;
+  } else if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const playing = showcaseVideo.play();
+          if (playing) playing.catch(() => {});
+        } else {
+          showcaseVideo.pause();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(showcaseVideo);
+  } else {
+    const playing = showcaseVideo.play();
+    if (playing) playing.catch(() => {});
+  }
+}
+
 document.querySelector('#year').textContent = new Date().getFullYear();
