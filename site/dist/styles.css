@@ -126,6 +126,22 @@ html[dir="rtl"] .image-caption { right: auto; left: -28px; }
 .showcase-video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius); background: #0d1f18; box-shadow: 0 30px 80px rgba(9, 43, 32, .16); }
 .showcase figcaption { margin-top: 16px; color: var(--muted); font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; text-align: center; }
 
+.feedback { width: var(--page); margin: auto; padding: 34px 0 6px; }
+.feedback-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 16px; }
+.feedback-head .eyebrow { margin: 0; }
+.feedback-nav { display: flex; gap: 8px; }
+.feedback-btn { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); background: var(--paper); font: inherit; font-size: 1.05rem; line-height: 1; cursor: pointer; transition: background .2s ease, border-color .2s ease, opacity .2s ease; }
+.feedback-btn:hover:not(:disabled) { background: var(--lime); border-color: transparent; }
+.feedback-btn:disabled { opacity: .3; cursor: default; }
+html[dir="rtl"] .feedback-btn span { display: inline-block; transform: scaleX(-1); }
+.feedback-track { display: flex; gap: 14px; margin: 0; padding: 2px 2px 18px; list-style: none; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline-start: 2px; scrollbar-width: thin; scrollbar-color: rgba(23, 33, 28, .24) transparent; }
+.feedback-track:focus-visible { outline: 2px solid var(--moss); outline-offset: 4px; border-radius: 18px; }
+.feedback-track::-webkit-scrollbar { height: 6px; }
+.feedback-track::-webkit-scrollbar-thumb { background: rgba(23, 33, 28, .24); border-radius: 999px; }
+html[data-theme="dark"] .feedback-track::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, .24); }
+.feedback-track li { flex: 0 0 auto; margin: 0; scroll-snap-align: start; }
+.feedback-track img { display: block; height: 420px; max-width: 560px; width: auto; object-fit: contain; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); box-shadow: 0 14px 40px rgba(9, 43, 32, .08); }
+
 .section { width: var(--page); margin: auto; padding: 130px 0; position: relative; }
 .section-label { display: flex; gap: 16px; margin-bottom: 66px; color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
 .section-label span { color: var(--moss); }
@@ -254,6 +270,10 @@ footer p { margin: 0; color: var(--muted); font-size: .74rem; }
   .showcase { padding-bottom: 0; }
   .showcase-video { border-radius: 18px; }
   .showcase figcaption { margin-top: 12px; font-size: .62rem; }
+  .feedback { padding-top: 26px; }
+  .feedback-btn { width: 40px; height: 40px; }
+  .feedback-track { gap: 10px; padding-bottom: 14px; }
+  .feedback-track img { height: 320px; max-width: 82vw; }
   html[dir="rtl"] .hero-visual { padding: 0 0 30px 12px; }
   html[dir="rtl"] .hero-note { right: -20%; left: auto; }
   html[dir="rtl"] .image-caption { right: auto; left: -9%; }
