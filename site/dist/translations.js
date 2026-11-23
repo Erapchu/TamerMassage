@@ -102,6 +102,8 @@ const translationRows = [
   ['Предыдущие отзывы', 'Previous reviews', 'الآراء السابقة'],
   ['Следующие отзывы', 'Next reviews', 'الآراء التالية'],
   ['Скриншот отзыва клиента', 'Screenshot of a client review', 'لقطة شاشة لرأي عميل'],
+  ['Оставить отзыв в VK', 'Leave a review on VK', 'اترك رأيًا على VK'],
+  ['Ваш отзыв важен для нас', 'Your feedback matters to us', 'رأيك مهم بالنسبة لنا'],
   ['лет заботы', 'years of care', 'عاماً من العناية'],
   ['о движении', 'for movement', 'بالحركة'],
   ['Индивидуальная работа с телом', 'Bodywork tailored to you', 'عناية بالجسم تناسبك'],
