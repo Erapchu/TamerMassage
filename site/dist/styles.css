@@ -144,6 +144,10 @@ html[data-theme="dark"] .feedback-track::-webkit-scrollbar-thumb { background: r
 .feedback-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin-top: 6px; padding: 18px 0 10px; border-top: 1px solid var(--line); }
 .feedback-cta p { margin: 0; color: var(--muted); font-size: .95rem; }
 .feedback-cta .button { min-height: 50px; gap: 14px; padding: 0 24px; font-size: .9rem; }
+.feedback-cta-actions { display: flex; align-items: center; gap: 20px; }
+.feedback-qr { display: flex; align-items: center; gap: 12px; margin: 0; }
+.feedback-qr img { width: 112px; height: 112px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.feedback-qr figcaption { max-width: 118px; color: var(--muted); font-size: .7rem; line-height: 1.45; }
 .feedback-track img { cursor: zoom-in; }
 
 .review-lightbox { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 18px clamp(10px, 3vw, 40px) 24px; border: 0; background: transparent; overflow: hidden; }
@@ -324,6 +328,8 @@ footer p { margin: 0; color: var(--muted); font-size: .74rem; }
   .feedback-track { gap: 10px; padding-bottom: 14px; }
   .feedback-track img { height: 320px; max-width: 82vw; }
   .feedback-cta { justify-content: center; gap: 10px; padding-top: 16px; text-align: center; }
+  .feedback-cta-actions { width: 100%; justify-content: center; }
+  .feedback-qr { display: none; }
   .feedback-cta .button { width: 100%; max-width: 340px; }
   .service-book { font-size: .84rem; }
   .review-lightbox { padding: 12px 10px calc(14px + env(safe-area-inset-bottom)); }
