@@ -137,7 +137,7 @@ if (feedbackTrack) {
   let autoplayOnScreen = false;
   let autoplayHeld = false;
 
-  const autoplayAllowed = () => !reduceMotion.matches && !document.hidden && autoplayOnScreen && !autoplayHeld;
+  const autoplayAllowed = () => !reduceMotion.matches && !document.hidden && autoplayOnScreen && !autoplayHeld && !document.body.classList.contains('lightbox-open');
 
   const stopAutoplay = () => {
     if (autoplayTimer) window.clearInterval(autoplayTimer);
@@ -197,6 +197,135 @@ if (feedbackTrack) {
   }
 
   syncFeedbackButtons();
+
+  // Full-size review viewer: click any card to open it, arrows / swipe to move.
+  const lightbox = document.querySelector('#review-lightbox');
+  if (lightbox) {
+    const lightboxImage = lightbox.querySelector('.review-lightbox-image');
+    const lightboxCount = lightbox.querySelector('.review-lightbox-count');
+    const reviewImages = [...feedbackTrack.querySelectorAll('li img')];
+    let lightboxIndex = 0;
+    let heldBeforeLightbox = false;
+    let pointerStart = null;
+    let swipeStart = null;
+
+    const renderLightbox = (index) => {
+      const total = reviewImages.length;
+      lightboxIndex = ((index % total) + total) % total;
+      const source = reviewImages[lightboxIndex];
+      lightboxImage.src = source.currentSrc || source.src;
+      lightboxImage.alt = source.alt;
+      lightboxCount.textContent = `${lightboxIndex + 1} / ${total}`;
+    };
+
+    const openLightbox = (index) => {
+      renderLightbox(index);
+      heldBeforeLightbox = autoplayHeld;
+      autoplayHeld = true;
+      stopAutoplay();
+      document.body.classList.add('lightbox-open');
+      lightbox.showModal();
+    };
+
+    const closeLightbox = () => lightbox.close();
+
+    reviewImages.forEach((image, index) => {
+      image.addEventListener('pointerdown', (event) => {
+        pointerStart = { x: event.clientX, y: event.clientY };
+      });
+      image.addEventListener('click', (event) => {
+        if (pointerStart && (Math.abs(event.clientX - pointerStart.x) > 8 || Math.abs(event.clientY - pointerStart.y) > 8)) return;
+        openLightbox(index);
+      });
+    });
+
+    lightbox.querySelectorAll('[data-lightbox-dir]').forEach((button) => {
+      button.addEventListener('click', () => {
+        renderLightbox(lightboxIndex + Number(button.dataset.lightboxDir) * (isRtl() ? -1 : 1));
+      });
+    });
+    lightbox.querySelector('[data-lightbox-close]')?.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    lightbox.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      renderLightbox(lightboxIndex + (event.key === 'ArrowRight' ? 1 : -1) * (isRtl() ? -1 : 1));
+    });
+
+    lightboxImage.addEventListener('touchstart', (event) => {
+      swipeStart = event.changedTouches[0].clientX;
+    }, { passive: true });
+    lightboxImage.addEventListener('touchend', (event) => {
+      if (swipeStart === null) return;
+      const delta = event.changedTouches[0].clientX - swipeStart;
+      swipeStart = null;
+      if (Math.abs(delta) < 40) return;
+      renderLightbox(lightboxIndex + (delta < 0 ? 1 : -1) * (isRtl() ? -1 : 1));
+    }, { passive: true });
+
+    lightbox.addEventListener('close', () => {
+      document.body.classList.remove('lightbox-open');
+      lightboxImage.removeAttribute('src');
+      autoplayHeld = heldBeforeLightbox;
+      startAutoplay();
+    });
+  }
+}
+
+// Booking links inside the price list: open Telegram with the service name
+// already in the message, in the language the visitor is reading.
+const serviceBookLinks = [...document.querySelectorAll('[data-service-book]')];
+const serviceMessages = {
+  ru: (name, duration) => `Здравствуйте, Тамер! Хочу записаться на «${name}» (${duration}).`,
+  en: (name, duration) => `Hello, Tamer! I would like to book “${name}” (${duration}).`,
+  ar: (name, duration) => `مرحباً تامر! أرغب في حجز «${name}» (${duration}).`
+};
+function updateServiceLinks() {
+  const language = document.documentElement.lang || 'ru';
+  const build = serviceMessages[language] || serviceMessages.ru;
+  serviceBookLinks.forEach((link) => {
+    const card = link.closest('.service-card');
+    const name = card?.querySelector('h3')?.textContent.trim() || '';
+    const duration = card?.querySelector('.service-price span')?.textContent.trim() || '';
+    link.href = `https://t.me/Tamelmawardy?text=${encodeURIComponent(build(name, duration))}`;
+  });
+}
+window.updateServiceLinks = updateServiceLinks;
+updateServiceLinks();
+
+// Sticky call / Telegram bar on phones: appears once the hero is scrolled past
+// and hides again while the booking section is on screen.
+const quickActions = document.querySelector('#quick-actions');
+const heroSection = document.querySelector('#top');
+const contactSection = document.querySelector('#contact');
+if (quickActions && heroSection) {
+  let quickFrame = null;
+  const setQuickVisible = (visible) => {
+    quickActions.classList.toggle('is-visible', visible);
+    quickActions.setAttribute('aria-hidden', String(!visible));
+    if ('inert' in quickActions) quickActions.inert = !visible;
+    document.body.classList.toggle('quick-actions-visible', visible);
+  };
+  const updateQuickActions = () => {
+    quickFrame = null;
+    const pastHero = heroSection.getBoundingClientRect().bottom < 120;
+    let atContact = false;
+    if (contactSection) {
+      const rect = contactSection.getBoundingClientRect();
+      atContact = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+    }
+    setQuickVisible(pastHero && !atContact);
+  };
+  const queueQuickUpdate = () => {
+    if (quickFrame === null) quickFrame = window.requestAnimationFrame(updateQuickActions);
+  };
+  window.addEventListener('scroll', queueQuickUpdate, { passive: true });
+  window.addEventListener('resize', queueQuickUpdate);
+  updateQuickActions();
 }
 
 document.querySelector('#year').textContent = new Date().getFullYear();

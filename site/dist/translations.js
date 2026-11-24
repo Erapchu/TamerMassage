@@ -104,6 +104,9 @@ const translationRows = [
   ['Скриншот отзыва клиента', 'Screenshot of a client review', 'لقطة شاشة لرأي عميل'],
   ['Оставить отзыв в VK', 'Leave a review on VK', 'اترك رأيًا على VK'],
   ['Ваш отзыв важен для нас', 'Your feedback matters to us', 'رأيك مهم بالنسبة لنا'],
+  ['Позвонить', 'Call', 'اتصل'],
+  ['Отзыв клиента', 'Client review', 'رأي عميل'],
+  ['Закрыть отзыв', 'Close review', 'إغلاق الرأي'],
   ['лет заботы', 'years of care', 'عاماً من العناية'],
   ['о движении', 'for movement', 'بالحركة'],
   ['Индивидуальная работа с телом', 'Bodywork tailored to you', 'عناية بالجسم تناسبك'],
@@ -182,6 +185,7 @@ function setLanguage(language) {
   languageName.lang = currentLanguage;
   languageButtons.forEach((button) => button.setAttribute('aria-pressed', String(button === selectedLanguage)));
   updateMenuLabel();
+  window.updateServiceLinks?.();
   try { localStorage.setItem('tamer-language', currentLanguage); } catch { /* Storage may be disabled. */ }
 }
 
