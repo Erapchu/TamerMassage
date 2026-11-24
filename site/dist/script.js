@@ -1,3 +1,21 @@
+// Reveal blocks as they enter the viewport, once each. The hidden state lives
+// behind html.has-js, so nothing disappears if this file fails to run.
+const revealTargets = [...document.querySelectorAll('[data-reveal]')];
+if (revealTargets.length) {
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+    revealTargets.forEach((target) => revealObserver.observe(target));
+  } else {
+    revealTargets.forEach((target) => target.classList.add('is-revealed'));
+  }
+}
+
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
 document.querySelectorAll('[data-theme-option]').forEach((button) => {

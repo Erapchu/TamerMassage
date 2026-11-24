@@ -1,3 +1,7 @@
+// Mark the document as scripted before the first paint, so the scroll-reveal
+// styles only hide content when JavaScript can actually bring it back.
+document.documentElement.classList.add('has-js');
+
 // Apply the saved theme before the stylesheet loads to avoid a bright flash.
 function setTheme(theme) {
   const nextTheme = theme === 'dark' ? 'dark' : 'light';
