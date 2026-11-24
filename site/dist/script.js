@@ -279,10 +279,16 @@ if (feedbackTrack) {
 // Booking links inside the price list: open Telegram with the service name
 // already in the message, in the language the visitor is reading.
 const serviceBookLinks = [...document.querySelectorAll('[data-service-book]')];
+const giftBookLinks = [...document.querySelectorAll('[data-gift-book]')];
 const serviceMessages = {
   ru: (name, duration) => `Здравствуйте, Тамер! Хочу записаться на «${name}» (${duration}).`,
   en: (name, duration) => `Hello, Tamer! I would like to book “${name}” (${duration}).`,
   ar: (name, duration) => `مرحباً تامر! أرغب في حجز «${name}» (${duration}).`
+};
+const giftMessages = {
+  ru: (name, price) => `Здравствуйте, Тамер! Хочу подарить сертификат «${name}» (${price}).`,
+  en: (name, price) => `Hello, Tamer! I would like to gift a certificate “${name}” (${price}).`,
+  ar: (name, price) => `مرحباً تامر! أرغب في إهداء شهادة «${name}» (${price}).`
 };
 function updateServiceLinks() {
   const language = document.documentElement.lang || 'ru';
@@ -292,6 +298,13 @@ function updateServiceLinks() {
     const name = card?.querySelector('h3')?.textContent.trim() || '';
     const duration = card?.querySelector('.service-price span')?.textContent.trim() || '';
     link.href = `https://t.me/Tamelmawardy?text=${encodeURIComponent(build(name, duration))}`;
+  });
+  const buildGift = giftMessages[language] || giftMessages.ru;
+  giftBookLinks.forEach((link) => {
+    const card = link.closest('.gift-card');
+    const name = card?.querySelector('h3')?.textContent.trim() || '';
+    const price = card?.querySelector('strong')?.textContent.trim() || '';
+    link.href = `https://t.me/Tamelmawardy?text=${encodeURIComponent(buildGift(name, price))}`;
   });
 }
 window.updateServiceLinks = updateServiceLinks;
