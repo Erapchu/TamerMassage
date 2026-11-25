@@ -152,6 +152,40 @@ const translationRows = [
   ['Тамер и его собака Рой', 'Tamer and his dog Roy', 'تامر وكلبه روي'],
   ['Тамер — массаж и работа с телом', 'Tamer — massage & bodywork', 'تامر — التدليك والعناية بالجسم'],
   ['Массаж у Тамера — сертифицированного мастера с опытом более 12 лет. Индивидуальная работа с телом и аппаратные процедуры.', 'Massage with Tamer, a certified therapist with over 12 years of experience. Personalised bodywork and device treatments.', 'تدليك مع تامر، أخصائي معتمد بخبرة تزيد عن 12 عاماً. عناية فردية بالجسم وجلسات بالأجهزة.'],
+  ['Подбор формата', 'Find your format', 'اختر صيغتك'],
+  ['Две минуты — и понятно', 'Two minutes to clarity', 'دقيقتان ووضوح'],
+  ['Не знаете,', 'Not sure', 'لا تعرف'],
+  ['что выбрать?', 'what to choose?', 'ماذا تختار؟'],
+  ['Ответьте на два коротких вопроса — покажу формат, который подойдёт именно вашему телу. Без записи и обязательств.', 'Answer two short questions and I will suggest the format that suits your body. No booking, no obligation.', 'أجب عن سؤالين قصيرين وسأقترح الصيغة التي تناسب جسمك. دون حجز أو التزام.'],
+  ['Вопрос 1 из 2', 'Question 1 of 2', 'السؤال 1 من 2'],
+  ['Вопрос 2 из 2', 'Question 2 of 2', 'السؤال 2 من 2'],
+  ['Готово', 'Done', 'تم'],
+  ['Ваш формат', 'Your match', 'صيغتك المناسبة'],
+  ['Что беспокоит?', 'What bothers you?', 'ما الذي يزعجك؟'],
+  ['Зона беспокойства', 'Area of concern', 'منطقة الانزعاج'],
+  ['Шея и плечи', 'Neck and shoulders', 'الرقبة والكتفان'],
+  ['Зажимы, тяжесть, «каменные» плечи', 'Tension, heaviness, rock-hard shoulders', 'شدّ وثقل وكتفان متيبستان'],
+  ['Спина', 'Back', 'الظهر'],
+  ['Напряжение в пояснице, скованность', 'Lower-back tension and stiffness', 'توتر في أسفل الظهر وتيبس'],
+  ['Ноги', 'Legs', 'الساقان'],
+  ['Тяжесть, отёчность, усталость после дня на ногах', 'Heaviness and swelling after a long day on your feet', 'ثقل وتورّم وإجهاد بعد يوم طويل على القدمين'],
+  ['Общая усталость', 'General fatigue', 'إجهاد عام'],
+  ['Всё тело просит паузы и восстановления', 'Your whole body is asking for rest and recovery', 'جسمك كله يطلب الراحة والتعافي'],
+  ['Какой формат ближе?', 'Which format suits you?', 'أي صيغة تناسبك؟'],
+  ['Формат сеанса', 'Session format', 'صيغة الجلسة'],
+  ['Только массаж', 'Massage only', 'تدليك فقط'],
+  ['Ручная работа, без аппаратов', 'Hands-on work, no devices', 'عمل يدوي دون أجهزة'],
+  ['Массаж + аппарат', 'Massage + device', 'تدليك + جهاز'],
+  ['Руки и технологии для выбранной зоны', 'Hands and technology for your chosen area', 'يدان وتقنيات للمنطقة المختارة'],
+  ['Максимальный комплекс', 'Full programme', 'برنامج متكامل'],
+  ['Всё лучшее в одном сеансе', 'The best of everything in one session', 'أفضل ما لدينا في جلسة واحدة'],
+  ['Назад', 'Back', 'رجوع'],
+  ['Записаться в Telegram', 'Book on Telegram', 'احجز عبر تيليجرام'],
+  ['Пройти заново', 'Start over', 'ابدأ من جديد'],
+  ['Шея и плечи любят постепенность: сначала мягко снимаем поверхностное напряжение, затем работаем глубже — без резких движений.', 'Neck and shoulders respond best to a gradual approach: first we ease the surface tension, then work deeper without sudden movements.', 'الرقبة والكتفان تحتاجان إلى التدرّج: نبدأ بتخفيف التوتر السطحي بلطف، ثم نعمل بعمق أكبر دون حركات مفاجئة.'],
+  ['Спине нужен полный сеанс: прогреваем мышцы, прорабатываем вдоль позвоночника и закрепляем результат спокойным дыханием.', 'Your back needs a full session: we warm the muscles, work along the spine and settle the result with calm breathing.', 'الظهر يحتاج إلى جلسة كاملة: ندفّئ العضلات، ونعمل على طول العمود الفقري، ونثبّت النتيجة بتنفّس هادئ.'],
+  ['Ногам помогает сочетание ручной проработки и аппаратной стимуляции — уходит тяжесть, возвращается лёгкость шага.', 'Legs benefit from hands-on work combined with device stimulation: heaviness fades and your step feels light again.', 'تستفيد الساقان من الجمع بين العمل اليدوي والتحفيز بالأجهزة: يزول الثقل وتعود خفة الخطوة.'],
+  ['Когда устало всё тело, важнее не сила, а ритм: спокойный сеанс помогает нервной системе переключиться и выдохнуть.', 'When your whole body is tired, rhythm matters more than force: a calm session helps the nervous system switch off and exhale.', 'عندما يكون الجسم كله متعباً، يكون الإيقاع أهم من القوة: جلسة هادئة تساعد الجهاز العصبي على الاسترخاء والتنفّس.'],
 ];
 
 const translations = new Map(translationRows.map((row) => [row[0], row]));
@@ -209,6 +243,8 @@ function setLanguage(language) {
   languageButtons.forEach((button) => button.setAttribute('aria-pressed', String(button === selectedLanguage)));
   updateMenuLabel();
   window.updateServiceLinks?.();
+  window.refreshQuiz?.();
+  window.fixPriceSpacing?.();
   try { localStorage.setItem('tamer-language', currentLanguage); } catch { /* Storage may be disabled. */ }
 }
 

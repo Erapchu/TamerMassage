@@ -328,6 +328,175 @@ function updateServiceLinks() {
 window.updateServiceLinks = updateServiceLinks;
 updateServiceLinks();
 
+// Keep thousands groups together in right-to-left layouts: with a regular
+// space the browser treats "3 500" as two runs and reorders them in Arabic.
+// A no-break space keeps the amount as one left-to-right unit.
+const priceElements = [...document.querySelectorAll('.service-price strong, .gift-card-foot strong, .quiz-result-meta strong')];
+function fixPriceSpacing() {
+  priceElements.forEach((element) => {
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+    let node = walker.nextNode();
+    while (node) {
+      const fixed = node.nodeValue.replace(/(\d)[ \u00A0\u202F](?=\d)/g, '$1\u00A0');
+      if (fixed !== node.nodeValue) node.nodeValue = fixed;
+      node = walker.nextNode();
+    }
+  });
+}
+window.fixPriceSpacing = fixPriceSpacing;
+fixPriceSpacing();
+
+// Two-tap format quiz: zone -> preferred format -> a recommendation from the
+// price list, with a ready-to-send Telegram message.
+const quizSection = document.querySelector('#quiz');
+if (quizSection) {
+  const quizSteps = [...quizSection.querySelectorAll('[data-quiz-step]')];
+  const quizProgress = quizSection.querySelector('[data-quiz-progress]');
+  const quizProgressFill = quizSection.querySelector('[data-quiz-progress-fill]');
+  const quizZoneButtons = [...quizSection.querySelectorAll('[data-quiz-zone]')];
+  const quizFormatButtons = [...quizSection.querySelectorAll('[data-quiz-format]')];
+  const quizBackButtons = [...quizSection.querySelectorAll('[data-quiz-back]')];
+  const quizRestartButton = quizSection.querySelector('[data-quiz-restart]');
+  const quizBookLink = quizSection.querySelector('[data-quiz-book]');
+  const quizResultName = quizSection.querySelector('[data-quiz-result-name]');
+  const quizResultPrice = quizSection.querySelector('[data-quiz-result-price]');
+  const quizResultDuration = quizSection.querySelector('[data-quiz-result-duration]');
+  const quizResultWhy = quizSection.querySelector('[data-quiz-result-why]');
+
+  const quizZoneLabels = {
+    neck: 'Шея и плечи',
+    back: 'Спина',
+    legs: 'Ноги',
+    fatigue: 'Общая усталость'
+  };
+  const quizFormatLabels = {
+    hands: 'Только массаж',
+    device: 'Массаж + аппарат',
+    max: 'Максимальный комплекс'
+  };
+  const quizWhy = {
+    neck: 'Шея и плечи любят постепенность: сначала мягко снимаем поверхностное напряжение, затем работаем глубже — без резких движений.',
+    back: 'Спине нужен полный сеанс: прогреваем мышцы, прорабатываем вдоль позвоночника и закрепляем результат спокойным дыханием.',
+    legs: 'Ногам помогает сочетание ручной проработки и аппаратной стимуляции — уходит тяжесть, возвращается лёгкость шага.',
+    fatigue: 'Когда устало всё тело, важнее не сила, а ритм: спокойный сеанс помогает нервной системе переключиться и выдохнуть.'
+  };
+  // Columns: hands-on only, hands + device, full programme.
+  const quizMatrix = {
+    neck: {
+      hands: { name: 'Лечебный массаж', price: '3 500 ₽', duration: '90 минут' },
+      device: { name: 'Лечебный + EMS + HI-FEM + RF', price: '5 000 ₽', duration: '90 минут' },
+      max: { name: 'Лечебный + эндосфера', price: '5 000 ₽', duration: '90 минут' }
+    },
+    back: {
+      hands: { name: 'Лечебный плюс', price: '4 000 ₽', duration: '90 минут' },
+      device: { name: 'Лечебный + эндосфера', price: '5 000 ₽', duration: '90 минут' },
+      max: { name: 'Комплекс на тело и лицо', price: '5 500 ₽', duration: '90 минут' }
+    },
+    legs: {
+      hands: { name: 'Лечебный массаж', price: '3 500 ₽', duration: '90 минут' },
+      device: { name: 'Эндосфера — тело', price: 'от 3 500 ₽', duration: '45 минут' },
+      max: { name: 'Лечебный + EMS + HI-FEM + RF', price: '5 000 ₽', duration: '90 минут' }
+    },
+    fatigue: {
+      hands: { name: 'Лечебный массаж', price: '3 500 ₽', duration: '90 минут' },
+      device: { name: 'Лечебный + эндосфера', price: '5 000 ₽', duration: '90 минут' },
+      max: { name: 'Комплекс на тело и лицо', price: '5 500 ₽', duration: '90 минут' }
+    }
+  };
+  const quizMessages = {
+    ru: (zone, format, name, duration) => `Здравствуйте, Тамер! Прошёл подбор на сайте: беспокоит «${zone}», удобнее формат «${format}». Рекомендация — «${name}» (${duration}). Хочу записаться.`,
+    en: (zone, format, name, duration) => `Hello, Tamer! I used the quiz on your site: my concern is “${zone}” and I prefer “${format}”. The recommendation is “${name}” (${duration}). I would like to book.`,
+    ar: (zone, format, name, duration) => `مرحباً تامر! استخدمت أداة الاختيار على موقعك: ما يزعجني هو «${zone}»، وأفضّل «${format}». التوصية هي «${name}» (${duration}). أرغب في الحجز.`
+  };
+
+  let quizZone = null;
+  let quizFormat = null;
+  let quizStep = 1;
+
+  const quizProgressText = (step) => (step === 1 ? 'Вопрос 1 из 2' : step === 2 ? 'Вопрос 2 из 2' : 'Готово');
+
+  const renderQuizResult = () => {
+    const service = quizMatrix[quizZone]?.[quizFormat];
+    if (!service) return;
+    quizResultName.textContent = translate(service.name);
+    quizResultPrice.textContent = translate(service.price);
+    quizResultDuration.textContent = translate(service.duration);
+    quizResultWhy.textContent = translate(quizWhy[quizZone]);
+    fixPriceSpacing();
+    const language = document.documentElement.lang || 'ru';
+    const build = quizMessages[language] || quizMessages.ru;
+    quizBookLink.href = `https://t.me/Tamelmawardy?text=${encodeURIComponent(build(
+      translate(quizZoneLabels[quizZone]),
+      translate(quizFormatLabels[quizFormat]),
+      translate(service.name),
+      translate(service.duration)
+    ))}`;
+  };
+
+  const showQuizStep = (step, focusTarget) => {
+    quizStep = step;
+    quizSteps.forEach((panel) => {
+      panel.hidden = Number(panel.dataset.quizStep) !== step;
+    });
+    quizProgressFill.style.width = step === 1 ? '50%' : '100%';
+    quizProgress.textContent = translate(quizProgressText(step));
+    const panel = quizSection.querySelector('.quiz-panel');
+    if (panel.getBoundingClientRect().top < 0) {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      panel.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' });
+    }
+    const activePanel = quizSteps.find((panel) => Number(panel.dataset.quizStep) === step);
+    if (focusTarget === false) return;
+    const target = focusTarget || activePanel?.querySelector('h3');
+    if (target) window.requestAnimationFrame(() => target.focus({ preventScroll: true }));
+  };
+
+  quizZoneButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      quizZone = button.dataset.quizZone;
+      quizZoneButtons.forEach((option) => option.setAttribute('aria-pressed', String(option === button)));
+      showQuizStep(2);
+    });
+  });
+
+  quizFormatButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      quizFormat = button.dataset.quizFormat;
+      quizFormatButtons.forEach((option) => option.setAttribute('aria-pressed', String(option === button)));
+      renderQuizResult();
+      showQuizStep(3);
+    });
+  });
+
+  quizBackButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (button.dataset.quizBack === 'result') {
+        const selected = quizFormatButtons.find((option) => option.dataset.quizFormat === quizFormat);
+        showQuizStep(2, selected);
+        return;
+      }
+      const selected = quizZoneButtons.find((option) => option.dataset.quizZone === quizZone);
+      showQuizStep(1, selected);
+    });
+  });
+
+  quizRestartButton?.addEventListener('click', () => {
+    quizZone = null;
+    quizFormat = null;
+    [...quizZoneButtons, ...quizFormatButtons].forEach((button) => button.setAttribute('aria-pressed', 'false'));
+    showQuizStep(1);
+  });
+
+  // Called from setLanguage() so a switch mid-quiz keeps the current step,
+  // recommendation and Telegram message in the new language.
+  window.refreshQuiz = () => {
+    quizProgress.textContent = translate(quizProgressText(quizStep));
+    if (quizStep === 3) renderQuizResult();
+  };
+
+  showQuizStep(1, false);
+}
+
 // Sticky call / Telegram bar on phones: appears once the hero is scrolled past
 // and hides again while the booking section is on screen.
 const quickActions = document.querySelector('#quick-actions');
