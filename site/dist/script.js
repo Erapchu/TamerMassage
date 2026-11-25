@@ -384,8 +384,8 @@ if (quizSection) {
   const quizMatrix = {
     neck: {
       hands: { name: 'Лечебный массаж', price: '3 500 ₽', duration: '90 минут' },
-      device: { name: 'Лечебный + EMS + HI-FEM + RF', price: '5 000 ₽', duration: '90 минут' },
-      max: { name: 'Лечебный + эндосфера', price: '5 000 ₽', duration: '90 минут' }
+      device: { name: 'Лечебный + эндосфера', price: '5 000 ₽', duration: '90 минут' },
+      max: { name: 'Лечебный + EMS + HI-FEM + RF', price: '5 000 ₽', duration: '90 минут' }
     },
     back: {
       hands: { name: 'Лечебный плюс', price: '4 000 ₽', duration: '90 минут' },
@@ -394,7 +394,7 @@ if (quizSection) {
     },
     legs: {
       hands: { name: 'Лечебный массаж', price: '3 500 ₽', duration: '90 минут' },
-      device: { name: 'Эндосфера — тело', price: 'от 3 500 ₽', duration: '45 минут' },
+      device: { name: 'Лечебный + эндосфера', price: '5 000 ₽', duration: '90 минут' },
       max: { name: 'Лечебный + EMS + HI-FEM + RF', price: '5 000 ₽', duration: '90 минут' }
     },
     fatigue: {
