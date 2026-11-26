@@ -240,6 +240,7 @@ function setLanguage(language) {
   const languageName = languageSelect.querySelector('.language-name');
   languageName.textContent = selectedLanguage.querySelector('span').textContent;
   languageName.lang = currentLanguage;
+  languageSelect.setAttribute('aria-label', translate('Язык сайта') + ': ' + languageName.textContent);
   languageButtons.forEach((button) => button.setAttribute('aria-pressed', String(button === selectedLanguage)));
   updateMenuLabel();
   window.updateServiceLinks?.();
