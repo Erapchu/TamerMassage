@@ -392,8 +392,9 @@ html.has-js [data-reveal].is-revealed { opacity: 1; transform: none; }
   .feedback-track { gap: 10px; padding-bottom: 14px; }
   .feedback-track img { height: 320px; max-width: 82vw; }
   .feedback-cta { justify-content: center; gap: 10px; padding-top: 16px; text-align: center; }
-  .feedback-cta-actions { width: 100%; justify-content: center; }
-  .feedback-qr { display: none; }
+  .feedback-cta-actions { width: 100%; flex-direction: column-reverse; justify-content: center; gap: 16px; }
+  .feedback-qr { display: flex; flex-direction: column; gap: 8px; text-align: center; }
+  .feedback-qr figcaption { max-width: none; }
   .feedback-cta .button { width: 100%; max-width: 340px; }
   .service-book { font-size: .84rem; }
   .review-lightbox { padding: 12px 10px calc(14px + env(safe-area-inset-bottom)); }
