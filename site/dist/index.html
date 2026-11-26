@@ -7,14 +7,14 @@
   <meta name="theme-color" content="#123d2d">
   <title>Тамер — массаж и работа с телом</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23123d2d'/%3E%3Cpath d='M16 22h32M32 22v27' stroke='%23e7f0d0' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M18 15c5-5 11-5 14 0-6 2-10 2-14 0Z' fill='%2399c269'/%3E%3C/svg%3E">
-  <script src="theme.js"></script>
-  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js?v=20261203"></script>
+  <link rel="stylesheet" href="styles.css?v=20261203">
 </head>
 <body>
   <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header" data-header>
-    <a class="brand" href="#top" aria-label="Тамер — на главную">
-      <span class="brand-mark">Т</span>
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">Т</span>
       <span class="brand-copy"><b>Тамер</b><small>массаж &amp; восстановление</small></span>
     </a>
     <div class="header-controls">
@@ -46,6 +46,7 @@
       <a href="#about">О мастере</a>
       <a href="#services">Услуги</a>
       <a href="#session">Как проходит сеанс</a>
+      <a href="#gift">Сертификат</a>
       <a class="nav-cta" href="#contact">Записаться</a>
     </nav>
   </header>
@@ -59,6 +60,28 @@
     </section>
 
     <section class="feedback" aria-labelledby="feedback-label">
+      <div class="review-ticker" aria-hidden="true">
+        <div class="review-ticker-track">
+          <div class="review-ticker-group">
+            <span>спина перестала болеть</span>
+            <span>ушли зажимы в шее</span>
+            <span>легко и свободно</span>
+            <span>золотые руки</span>
+            <span>наконец выспалась</span>
+            <span>хожу курсом</span>
+            <span>чувствую себя заново собранной</span>
+          </div>
+          <div class="review-ticker-group">
+            <span>спина перестала болеть</span>
+            <span>ушли зажимы в шее</span>
+            <span>легко и свободно</span>
+            <span>золотые руки</span>
+            <span>наконец выспалась</span>
+            <span>хожу курсом</span>
+            <span>чувствую себя заново собранной</span>
+          </div>
+        </div>
+      </div>
       <div class="feedback-head">
         <p class="eyebrow" id="feedback-label">Отзывы клиентов</p>
         <div class="feedback-nav">
@@ -138,6 +161,16 @@
         <li><img src="assets/feedback/feedback-69.jpg" alt="Скриншот отзыва клиента" width="655" height="453" loading="lazy" decoding="async"></li>
         <li><img src="assets/feedback/feedback-70.jpg" alt="Скриншот отзыва клиента" width="665" height="329" loading="lazy" decoding="async"></li>
       </ul>
+      <div class="feedback-cta">
+        <p>Ваш отзыв важен для нас</p>
+        <div class="feedback-cta-actions">
+          <figure class="feedback-qr">
+            <img src="assets/vk-qr.svg?v=20261203" alt="QR-код на страницу VK с отзывами" width="112" height="112" decoding="async">
+            <figcaption>Наведите камеру,<br>чтобы открыть VK</figcaption>
+          </figure>
+          <a class="button button-primary feedback-cta-button" href="https://vk.ru/id562836020" target="_blank" rel="noopener noreferrer">Оставить отзыв в VK <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
     </section>
 
     <section class="hero" id="top">
@@ -166,15 +199,15 @@
 
     <section class="intro section" id="about">
       <div class="section-label"><span>01</span> О мастере</div>
-      <div class="intro-heading">
+      <div class="intro-heading" data-reveal>
         <p class="eyebrow">Здравствуйте, меня зовут Тамер</p>
         <h2>Не просто массаж —<br>вдумчивая работа с вашим запросом.</h2>
       </div>
-      <div class="intro-body">
+      <div class="intro-body" data-reveal>
         <p>Более 12 лет я помогаю людям справляться с болью и мышечным напряжением. Основам профессии я учился у немецкого профессора в Хургаде, а квалификацию подтвердил сертификатом Американского университета в Каире.</p>
         <p>В работе использую массажные и мануальные техники. После сеанса даю понятные рекомендации: какие упражнения добавить в повседневную жизнь и как поддержать результат.</p>
       </div>
-      <blockquote>
+      <blockquote data-reveal>
         <p>«Эффект массажа — естественная восстанавливающая сила организма, сила жизни»</p>
         <cite>Гиппократ</cite>
       </blockquote>
@@ -182,12 +215,12 @@
 
     <section class="services section" id="services">
       <div class="section-label section-label-light"><span>02</span> Услуги</div>
-      <div class="services-head">
+      <div class="services-head" data-reveal>
         <h2>Подходящий формат<br>для вашего тела</h2>
         <p>Начинаем не с готовой схемы, а с разговора: что беспокоит, где чувствуется напряжение и какого результата вы ждёте.</p>
       </div>
 
-      <div class="price-tabs" data-tabs>
+      <div class="price-tabs" data-tabs data-reveal>
         <div class="tab-list" role="tablist" aria-label="Категории услуг">
           <button role="tab" id="tab-massage" aria-controls="panel-massage" aria-selected="true">Массаж</button>
           <button role="tab" id="tab-apparatus" aria-controls="panel-apparatus" aria-selected="false" tabindex="-1">Аппаратные процедуры</button>
@@ -197,17 +230,17 @@
         <div class="tab-panel" id="panel-massage" role="tabpanel" aria-labelledby="tab-massage">
           <article class="service-card featured">
             <div class="service-number">01</div>
-            <div><h3>Лечебный массаж</h3><p>Полный сеанс с проработкой зон напряжения и вниманием к вашему самочувствию.</p></div>
+            <div><h3>Лечебный массаж</h3><p>Полный сеанс с проработкой зон напряжения и вниманием к вашему самочувствию.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>3 500 ₽</strong><span>90 минут</span></div>
           </article>
           <article class="service-card">
             <div class="service-number">02</div>
-            <div><h3>Лечебный плюс</h3><p>Расширенный формат для более глубокой и продолжительной работы с телом.</p></div>
+            <div><h3>Лечебный плюс</h3><p>Расширенный формат для более глубокой и продолжительной работы с телом.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>4 000 ₽</strong><span>90 минут</span></div>
           </article>
           <article class="service-card">
             <div class="service-number">03</div>
-            <div><h3>Детский массаж</h3><p>Бережный формат для детей до 10 лет.</p></div>
+            <div><h3>Детский массаж</h3><p>Бережный формат для детей до 10 лет.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>2 000 ₽</strong><span>60 минут</span></div>
           </article>
         </div>
@@ -215,22 +248,22 @@
         <div class="tab-panel" id="panel-apparatus" role="tabpanel" aria-labelledby="tab-apparatus" hidden>
           <article class="service-card featured">
             <div class="service-number">01</div>
-            <div><h3>Эндосфера — лицо</h3><p>Виброкомпрессионная процедура для тонуса, микроциркуляции и ухода за кожей.</p></div>
+            <div><h3>Эндосфера — лицо</h3><p>Виброкомпрессионная процедура для тонуса, микроциркуляции и ухода за кожей.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>1 800 ₽</strong><span>30 минут</span></div>
           </article>
           <article class="service-card">
             <div class="service-number">02</div>
-            <div><h3>Эндосфера — тело</h3><p>Работа с мышечной усталостью, тонусом и контурами тела.</p></div>
+            <div><h3>Эндосфера — тело</h3><p>Работа с мышечной усталостью, тонусом и контурами тела.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>от 3 500 ₽</strong><span>45 минут</span></div>
           </article>
           <article class="service-card">
             <div class="service-number">03</div>
-            <div><h3>HI-FEM — живот</h3><p>Высокоинтенсивная электромагнитная стимуляция для тонуса мышц.</p></div>
+            <div><h3>HI-FEM — живот</h3><p>Высокоинтенсивная электромагнитная стимуляция для тонуса мышц.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>1 500 ₽</strong><span>30 минут</span></div>
           </article>
           <article class="service-card">
             <div class="service-number">04</div>
-            <div><h3>HI-FEM — ягодицы / руки</h3><p>Локальная стимуляция выбранной зоны.</p></div>
+            <div><h3>HI-FEM — ягодицы / руки</h3><p>Локальная стимуляция выбранной зоны.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>от 1 800 ₽</strong><span>30 минут</span></div>
           </article>
         </div>
@@ -238,22 +271,22 @@
         <div class="tab-panel" id="panel-programs" role="tabpanel" aria-labelledby="tab-programs" hidden>
           <article class="service-card featured">
             <div class="service-number">01</div>
-            <div><h3>Лечебный + EMS + HI-FEM + RF</h3><p>Массаж и аппаратная работа с одной выбранной зоной.</p></div>
+            <div><h3>Лечебный + EMS + HI-FEM + RF</h3><p>Массаж и аппаратная работа с одной выбранной зоной.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>5 000 ₽</strong><span>90 минут</span></div>
           </article>
           <article class="service-card">
             <div class="service-number">02</div>
-            <div><h3>Лечебный + эндосфера</h3><p>Ручная и аппаратная работа в одном полноценном сеансе.</p></div>
+            <div><h3>Лечебный + эндосфера</h3><p>Ручная и аппаратная работа в одном полноценном сеансе.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>5 000 ₽</strong><span>90 минут</span></div>
           </article>
           <article class="service-card">
             <div class="service-number">03</div>
-            <div><h3>Живот + эндосфера лица</h3><p>EMS, HI-FEM и RF для тела плюс аппаратный уход для лица.</p></div>
+            <div><h3>Живот + эндосфера лица</h3><p>EMS, HI-FEM и RF для тела плюс аппаратный уход для лица.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>3 500 ₽</strong><span>60 минут</span></div>
           </article>
           <article class="service-card">
             <div class="service-number">04</div>
-            <div><h3>Комплекс на тело и лицо</h3><p>Выбранная зона тела и расширенная процедура эндосферы.</p></div>
+            <div><h3>Комплекс на тело и лицо</h3><p>Выбранная зона тела и расширенная процедура эндосферы.</p><a class="service-book" data-service-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться <span aria-hidden="true">↗</span></a></div>
             <div class="service-price"><strong>5 500 ₽</strong><span>90 минут</span></div>
           </article>
         </div>
@@ -261,14 +294,127 @@
       </div>
     </section>
 
+    <section class="quiz section" id="quiz" aria-labelledby="quiz-title">
+      <div class="section-label"><span>03</span> Подбор формата</div>
+      <div class="quiz-head" data-reveal>
+        <div>
+          <p class="eyebrow">Две минуты — и понятно</p>
+          <h2 id="quiz-title">Не знаете,<br>что выбрать?</h2>
+        </div>
+        <p class="quiz-intro">Ответьте на два коротких вопроса — покажу формат, который подойдёт именно вашему телу. Без записи и обязательств.</p>
+      </div>
+      <div class="quiz-panel" data-reveal>
+        <div class="quiz-progress">
+          <span class="quiz-progress-label" data-quiz-progress aria-live="polite">Вопрос 1 из 2</span>
+          <span class="quiz-progress-track" aria-hidden="true"><span class="quiz-progress-fill" data-quiz-progress-fill></span></span>
+        </div>
+
+        <div class="quiz-step" data-quiz-step="1">
+          <h3 class="quiz-question" tabindex="-1">Что беспокоит?</h3>
+          <div class="quiz-options" role="group" aria-label="Зона беспокойства">
+            <button type="button" class="quiz-option" data-quiz-zone="neck" aria-pressed="false">
+              <span class="quiz-option-title">Шея и плечи</span>
+              <span class="quiz-option-hint">Зажимы, тяжесть, «каменные» плечи</span>
+            </button>
+            <button type="button" class="quiz-option" data-quiz-zone="back" aria-pressed="false">
+              <span class="quiz-option-title">Спина</span>
+              <span class="quiz-option-hint">Напряжение в пояснице, скованность</span>
+            </button>
+            <button type="button" class="quiz-option" data-quiz-zone="legs" aria-pressed="false">
+              <span class="quiz-option-title">Ноги</span>
+              <span class="quiz-option-hint">Тяжесть, отёчность, усталость после дня на ногах</span>
+            </button>
+            <button type="button" class="quiz-option" data-quiz-zone="fatigue" aria-pressed="false">
+              <span class="quiz-option-title">Общая усталость</span>
+              <span class="quiz-option-hint">Всё тело просит паузы и восстановления</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-quiz-step="2" hidden>
+          <h3 class="quiz-question" tabindex="-1">Какой формат ближе?</h3>
+          <div class="quiz-options quiz-options-formats" role="group" aria-label="Формат сеанса">
+            <button type="button" class="quiz-option" data-quiz-format="hands" aria-pressed="false">
+              <span class="quiz-option-title">Только массаж</span>
+              <span class="quiz-option-hint">Ручная работа, без аппаратов</span>
+            </button>
+            <button type="button" class="quiz-option" data-quiz-format="device" aria-pressed="false">
+              <span class="quiz-option-title">Массаж + аппарат</span>
+              <span class="quiz-option-hint">Руки и технологии для выбранной зоны</span>
+            </button>
+            <button type="button" class="quiz-option" data-quiz-format="max" aria-pressed="false">
+              <span class="quiz-option-title">Максимальный комплекс</span>
+              <span class="quiz-option-hint">Всё лучшее в одном сеансе</span>
+            </button>
+          </div>
+          <button type="button" class="quiz-back" data-quiz-back><span aria-hidden="true">←</span> Назад</button>
+        </div>
+
+        <div class="quiz-step quiz-result" data-quiz-step="3" hidden>
+          <p class="quiz-kicker">Ваш формат</p>
+          <div class="quiz-result-head">
+            <h3 data-quiz-result-name tabindex="-1">Лечебный массаж</h3>
+            <div class="quiz-result-meta">
+              <strong data-quiz-result-price>3 500 ₽</strong>
+              <span data-quiz-result-duration>90 минут</span>
+            </div>
+          </div>
+          <p class="quiz-result-why" data-quiz-result-why>Шея и плечи любят постепенность: сначала мягко снимаем поверхностное напряжение, затем работаем глубже — без резких движений.</p>
+          <div class="quiz-result-actions">
+            <a class="button button-primary quiz-result-book" data-quiz-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Записаться в Telegram <span aria-hidden="true">↗</span></a>
+            <button type="button" class="quiz-restart" data-quiz-restart>Пройти заново</button>
+            <button type="button" class="quiz-back quiz-result-back" data-quiz-back="result"><span aria-hidden="true">←</span> Назад</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gift section" id="gift" aria-labelledby="gift-title">
+      <div class="section-label"><span>04</span> Подарочный сертификат</div>
+      <div class="gift-head" data-reveal>
+        <h2 id="gift-title">Подарите не вещь,<br>а хорошее самочувствие.</h2>
+        <p>Сертификат Тамера — это конкретная забота: время тишины, тёплые руки и тело, которое наконец выдохнуло. Действует 6 месяцев, оформляется за пару минут в Telegram.</p>
+      </div>
+      <div class="gift-cards" data-reveal>
+        <article class="gift-card">
+          <span class="gift-card-kicker">Сертификат</span>
+          <h3>Один сеанс</h3>
+          <p>Лечебный массаж, 90 минут</p>
+          <div class="gift-card-foot">
+            <strong>3 500 ₽</strong>
+            <a class="gift-card-link" data-gift-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Выбрать <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="gift-card">
+          <span class="gift-card-kicker">Сертификат</span>
+          <h3>Комплекс</h3>
+          <p>Массаж и аппаратная процедура, 90 минут</p>
+          <div class="gift-card-foot">
+            <strong>5 000 ₽</strong>
+            <a class="gift-card-link" data-gift-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Выбрать <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="gift-card">
+          <span class="gift-card-kicker">Сертификат</span>
+          <h3>Два сеанса</h3>
+          <p>Два лечебных сеанса, 90 минут каждый</p>
+          <div class="gift-card-foot">
+            <strong>7 000 ₽</strong>
+            <a class="gift-card-link" data-gift-book href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Выбрать <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+      <p class="gift-note">Действует 6 месяцев · оформляется в Telegram</p>
+    </section>
+
     <section class="session section" id="session">
-      <div class="section-label"><span>03</span> Ваш сеанс</div>
+      <div class="section-label"><span>05</span> Ваш сеанс</div>
       <div class="session-grid">
-        <div class="session-photo">
+        <div class="session-photo" data-reveal>
           <img src="assets/massage_start.jpg" alt="Тамер проводит сеанс массажа в светлом кабинете" width="1080" height="795" loading="lazy">
           <span class="image-caption">Спокойный кабинет · музыка · удобный стол</span>
         </div>
-        <div class="session-content">
+        <div class="session-content" data-reveal>
           <p class="eyebrow">Всё начинается с разговора</p>
           <h2>Понятно.<br>Бережно.<br>Постепенно.</h2>
           <ol class="steps">
@@ -282,18 +428,18 @@
     </section>
 
     <section class="equipment section" aria-labelledby="equipment-title">
-      <div class="section-label"><span>04</span> Технологии</div>
-      <div class="equipment-copy">
+      <div class="section-label"><span>06</span> Технологии</div>
+      <div class="equipment-copy" data-reveal>
         <p class="eyebrow">Когда ручной работы недостаточно</p>
         <h2 id="equipment-title">Аппаратные процедуры<br>дополняют массаж.</h2>
         <p>EMS, HI-FEM, RF и эндосфера помогают сфокусироваться на выбранной зоне, поддержать тонус мышц и дополнить программу работы с телом.</p>
       </div>
-      <div class="equipment-gallery">
+      <div class="equipment-gallery" data-reveal>
         <figure class="equipment-main"><img src="assets/emsculpt3.jpg" alt="Аппаратная процедура для мышц живота" width="1024" height="981" loading="lazy"></figure>
         <figure><img src="assets/emsculpt.jpg" alt="Аппарат EMSculpt во время процедуры" width="1048" height="965" loading="lazy"></figure>
         <figure><img src="assets/emsculpt2.jpg" alt="Аппаратная процедура для ягодичных мышц" width="1079" height="857" loading="lazy"></figure>
       </div>
-      <div class="equipment-row">
+      <div class="equipment-row" data-reveal>
         <figure><img src="assets/equipment-rf.jpg" alt="RF-процедура на бедре" width="582" height="484" loading="lazy"></figure>
         <figure><img src="assets/equipment-hi-fem.jpg" alt="HI-FEM-процедура на животе" width="297" height="180" loading="lazy"></figure>
         <figure><img src="assets/equipment-face.jpg" alt="Эндосфера для лица" width="239" height="159" loading="lazy"></figure>
@@ -302,11 +448,11 @@
     </section>
 
     <section class="roy section" aria-labelledby="roy-title">
-      <div class="roy-collage">
+      <div class="roy-collage" data-reveal>
         <img class="roy-dog" src="assets/Roy_dog.jpg" alt="Овчарка Рой в лесу" width="1200" height="1600" loading="lazy">
         <img class="roy-together" src="assets/Roy_and_Tamer.jpg" alt="Тамер и его собака Рой" width="768" height="1024" loading="lazy">
       </div>
-      <div class="roy-copy">
+      <div class="roy-copy" data-reveal>
         <p class="eyebrow">Для тех, кто дочитал до конца</p>
         <h2 id="roy-title">Знакомьтесь,<br>это Рой.</h2>
         <p>Рой — мой верный друг и спутник на прогулках. Он помогает мне отдохнуть и восстановить силы после рабочего дня. Обычно во время сеанса Рой находится рядом. Если вам будет комфортнее без него, на время массажа он побудет в другом месте.</p>
@@ -314,7 +460,7 @@
     </section>
 
     <section class="contact section" id="contact">
-      <div class="contact-inner">
+      <div class="contact-inner" data-reveal>
         <p class="eyebrow">Запись и консультация</p>
         <h2>Давайте начнём<br>с вашего запроса.</h2>
         <p>Позвоните Тамеру: расскажите, что беспокоит, и он поможет выбрать подходящий формат и время.</p>
@@ -327,7 +473,7 @@
           <span>Позвоните, чтобы записаться.</span>
           <ul class="contact-links">
             <li><a href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer">Telegram</a></li>
-            <li><a href="https://vk.com/tamer_massage" target="_blank" rel="noopener noreferrer">VK</a></li>
+            <li><a href="https://vk.ru/id562836020" target="_blank" rel="noopener noreferrer">VK</a></li>
             <li><a href="https://max.ru/u/f9LHodD0cOLDI2wrZfigZPBUtih61NG9aYY1iOvPqY6wb19BAAxeo-qLFcI" target="_blank" rel="noopener noreferrer">MAX</a></li>
           </ul>
         </div>
@@ -336,7 +482,7 @@
           <span>Комендантский проспект</span>
         </div>
       </div>
-      <div class="contact-orbit" aria-hidden="true"><span>12+</span><small>лет заботы<br>о движении</small></div>
+      <div class="contact-orbit" aria-hidden="true" data-reveal><span>12+</span><small>лет заботы<br>о движении</small></div>
     </section>
   </main>
 
@@ -346,7 +492,22 @@
     <p>© <span id="year"></span> Тамер</p>
   </footer>
 
-  <script src="translations.js"></script>
-  <script src="script.js"></script>
+  <dialog class="review-lightbox" id="review-lightbox" aria-label="Отзыв клиента">
+    <div class="review-lightbox-bar">
+      <span class="review-lightbox-count" aria-hidden="true"></span>
+      <button type="button" class="review-lightbox-close" data-lightbox-close aria-label="Закрыть отзыв">×</button>
+    </div>
+    <button type="button" class="review-lightbox-nav review-lightbox-prev" data-lightbox-dir="-1" aria-label="Предыдущие отзывы"><span aria-hidden="true">←</span></button>
+    <img class="review-lightbox-image" alt="Скриншот отзыва клиента" decoding="async">
+    <button type="button" class="review-lightbox-nav review-lightbox-next" data-lightbox-dir="1" aria-label="Следующие отзывы"><span aria-hidden="true">→</span></button>
+  </dialog>
+
+  <div class="quick-actions" id="quick-actions" aria-hidden="true">
+    <a class="quick-actions-btn quick-actions-call" href="tel:+79818554031"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.66 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.23a2 2 0 0 1 2.11-.45c.84.32 1.73.54 2.63.66A2 2 0 0 1 22 16.92z"/></svg>Позвонить</a>
+    <a class="quick-actions-btn quick-actions-telegram" href="https://t.me/Tamelmawardy" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>Telegram</a>
+  </div>
+
+  <script src="translations.js?v=20261203"></script>
+  <script src="script.js?v=20261203"></script>
 </body>
 </html>

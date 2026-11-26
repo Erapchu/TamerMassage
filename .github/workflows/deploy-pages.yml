@@ -15,14 +15,24 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  # Upload and deploy run in separate jobs on purpose. When deploy-pages
+  # follows upload-pages-artifact in the same job, it can query the artifact
+  # API before the upload has propagated and fail with
+  # "No artifacts named github-pages were found" (actions/deploy-pages#451).
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
+
+      # Give styles.css / script.js / translations.js / theme.js a fresh
+      # ?v=<commit> query on every deploy, so visitors never run a stale
+      # cached copy after a push.
+      - name: Stamp asset versions
+        run: |
+          token="${GITHUB_SHA::8}"
+          sed -i -E "s/\?v=[0-9A-Za-z._-]+/?v=${token}/g" site/dist/index.html
+          grep -o '?v=[0-9A-Za-z._-]*' site/dist/index.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v6.0.0
@@ -32,6 +42,13 @@ jobs:
         with:
           path: site/dist
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5.0.1

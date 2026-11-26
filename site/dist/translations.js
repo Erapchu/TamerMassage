@@ -102,6 +102,34 @@ const translationRows = [
   ['Предыдущие отзывы', 'Previous reviews', 'الآراء السابقة'],
   ['Следующие отзывы', 'Next reviews', 'الآراء التالية'],
   ['Скриншот отзыва клиента', 'Screenshot of a client review', 'لقطة شاشة لرأي عميل'],
+  ['спина перестала болеть', 'back pain gone', 'اختفى ألم الظهر'],
+  ['ушли зажимы в шее', 'neck finally free', 'تحرّرت الرقبة'],
+  ['легко и свободно', 'light and free', 'خفّة وحرية'],
+  ['золотые руки', 'golden hands', 'يدان ذهبيتان'],
+  ['наконец выспалась', 'finally slept well', 'نمت أخيراً بعمق'],
+  ['хожу курсом', 'on a course now', 'أواصل الجلسات'],
+  ['чувствую себя заново собранной', 'feels put back together', 'أشعر أنني عُدت كما كنت'],
+  ['Оставить отзыв в VK', 'Leave a review on VK', 'اترك رأيًا على VK'],
+  ['QR-код на страницу VK с отзывами', 'QR code for the VK reviews page', 'رمز QR لصفحة الآراء على VK'],
+  ['Наведите камеру,', 'Point your camera,', 'وجّه الكاميرا،'],
+  ['чтобы открыть VK', 'to open VK', 'لفتح VK'],
+  ['Ваш отзыв важен для нас', 'Your feedback matters to us', 'رأيك مهم بالنسبة لنا'],
+  ['Позвонить', 'Call', 'اتصل'],
+  ['Отзыв клиента', 'Client review', 'رأي عميل'],
+  ['Закрыть отзыв', 'Close review', 'إغلاق الرأي'],
+  ['Сертификат', 'Gift certificate', 'شهادة هدية'],
+  ['Подарочный сертификат', 'Gift certificate', 'شهادة هدية'],
+  ['Подарите не вещь,', 'Give an experience,', 'أهدِ تجربة،'],
+  ['а хорошее самочувствие.', 'not an object.', 'لا شيئاً مادياً.'],
+  ['Сертификат Тамера — это конкретная забота: время тишины, тёплые руки и тело, которое наконец выдохнуло. Действует 6 месяцев, оформляется за пару минут в Telegram.', 'A Tamer certificate is care you can hand over: quiet time, warm hands and a body that finally exhales. Valid for 6 months, arranged in a couple of minutes on Telegram.', 'شهادة تامر هي عناية تُهديها: وقت من الهدوء، ويدان دافئتان، وجسم يستريح أخيراً. صالحة لمدة 6 أشهر، وتُطلب خلال دقائق عبر تيليجرام.'],
+  ['Один сеанс', 'One session', 'جلسة واحدة'],
+  ['Лечебный массаж, 90 минут', 'Therapeutic massage, 90 minutes', 'تدليك علاجي، 90 دقيقة'],
+  ['Комплекс', 'Combined session', 'جلسة متكاملة'],
+  ['Массаж и аппаратная процедура, 90 минут', 'Massage and a device treatment, 90 minutes', 'تدليك وجلسة بالأجهزة، 90 دقيقة'],
+  ['Два сеанса', 'Two sessions', 'جلستان'],
+  ['Два лечебных сеанса, 90 минут каждый', 'Two therapeutic sessions, 90 minutes each', 'جلستان علاجيتان، 90 دقيقة لكل منهما'],
+  ['Выбрать', 'Choose', 'اختر'],
+  ['Действует 6 месяцев · оформляется в Telegram', 'Valid for 6 months · arranged in Telegram', 'صالحة لمدة 6 أشهر · تُطلب عبر تيليجرام'],
   ['лет заботы', 'years of care', 'عاماً من العناية'],
   ['о движении', 'for movement', 'بالحركة'],
   ['Индивидуальная работа с телом', 'Bodywork tailored to you', 'عناية بالجسم تناسبك'],
@@ -124,6 +152,40 @@ const translationRows = [
   ['Тамер и его собака Рой', 'Tamer and his dog Roy', 'تامر وكلبه روي'],
   ['Тамер — массаж и работа с телом', 'Tamer — massage & bodywork', 'تامر — التدليك والعناية بالجسم'],
   ['Массаж у Тамера — сертифицированного мастера с опытом более 12 лет. Индивидуальная работа с телом и аппаратные процедуры.', 'Massage with Tamer, a certified therapist with over 12 years of experience. Personalised bodywork and device treatments.', 'تدليك مع تامر، أخصائي معتمد بخبرة تزيد عن 12 عاماً. عناية فردية بالجسم وجلسات بالأجهزة.'],
+  ['Подбор формата', 'Find your format', 'اختر صيغتك'],
+  ['Две минуты — и понятно', 'Two minutes to clarity', 'دقيقتان ووضوح'],
+  ['Не знаете,', 'Not sure', 'لا تعرف'],
+  ['что выбрать?', 'what to choose?', 'ماذا تختار؟'],
+  ['Ответьте на два коротких вопроса — покажу формат, который подойдёт именно вашему телу. Без записи и обязательств.', 'Answer two short questions and I will suggest the format that suits your body. No booking, no obligation.', 'أجب عن سؤالين قصيرين وسأقترح الصيغة التي تناسب جسمك. دون حجز أو التزام.'],
+  ['Вопрос 1 из 2', 'Question 1 of 2', 'السؤال 1 من 2'],
+  ['Вопрос 2 из 2', 'Question 2 of 2', 'السؤال 2 من 2'],
+  ['Готово', 'Done', 'تم'],
+  ['Ваш формат', 'Your match', 'صيغتك المناسبة'],
+  ['Что беспокоит?', 'What bothers you?', 'ما الذي يزعجك؟'],
+  ['Зона беспокойства', 'Area of concern', 'منطقة الانزعاج'],
+  ['Шея и плечи', 'Neck and shoulders', 'الرقبة والكتفان'],
+  ['Зажимы, тяжесть, «каменные» плечи', 'Tension, heaviness, rock-hard shoulders', 'شدّ وثقل وكتفان متيبستان'],
+  ['Спина', 'Back', 'الظهر'],
+  ['Напряжение в пояснице, скованность', 'Lower-back tension and stiffness', 'توتر في أسفل الظهر وتيبس'],
+  ['Ноги', 'Legs', 'الساقان'],
+  ['Тяжесть, отёчность, усталость после дня на ногах', 'Heaviness and swelling after a long day on your feet', 'ثقل وتورّم وإجهاد بعد يوم طويل على القدمين'],
+  ['Общая усталость', 'General fatigue', 'إجهاد عام'],
+  ['Всё тело просит паузы и восстановления', 'Your whole body is asking for rest and recovery', 'جسمك كله يطلب الراحة والتعافي'],
+  ['Какой формат ближе?', 'Which format suits you?', 'أي صيغة تناسبك؟'],
+  ['Формат сеанса', 'Session format', 'صيغة الجلسة'],
+  ['Только массаж', 'Massage only', 'تدليك فقط'],
+  ['Ручная работа, без аппаратов', 'Hands-on work, no devices', 'عمل يدوي دون أجهزة'],
+  ['Массаж + аппарат', 'Massage + device', 'تدليك + جهاز'],
+  ['Руки и технологии для выбранной зоны', 'Hands and technology for your chosen area', 'يدان وتقنيات للمنطقة المختارة'],
+  ['Максимальный комплекс', 'Full programme', 'برنامج متكامل'],
+  ['Всё лучшее в одном сеансе', 'The best of everything in one session', 'أفضل ما لدينا في جلسة واحدة'],
+  ['Назад', 'Back', 'رجوع'],
+  ['Записаться в Telegram', 'Book on Telegram', 'احجز عبر تيليجرام'],
+  ['Пройти заново', 'Start over', 'ابدأ من جديد'],
+  ['Шея и плечи любят постепенность: сначала мягко снимаем поверхностное напряжение, затем работаем глубже — без резких движений.', 'Neck and shoulders respond best to a gradual approach: first we ease the surface tension, then work deeper without sudden movements.', 'الرقبة والكتفان تحتاجان إلى التدرّج: نبدأ بتخفيف التوتر السطحي بلطف، ثم نعمل بعمق أكبر دون حركات مفاجئة.'],
+  ['Спине нужен полный сеанс: прогреваем мышцы, прорабатываем вдоль позвоночника и закрепляем результат спокойным дыханием.', 'Your back needs a full session: we warm the muscles, work along the spine and settle the result with calm breathing.', 'الظهر يحتاج إلى جلسة كاملة: ندفّئ العضلات، ونعمل على طول العمود الفقري، ونثبّت النتيجة بتنفّس هادئ.'],
+  ['Ногам помогает сочетание ручной проработки и аппаратной стимуляции — уходит тяжесть, возвращается лёгкость шага.', 'Legs benefit from hands-on work combined with device stimulation: heaviness fades and your step feels light again.', 'تستفيد الساقان من الجمع بين العمل اليدوي والتحفيز بالأجهزة: يزول الثقل وتعود خفة الخطوة.'],
+  ['Когда устало всё тело, важнее не сила, а ритм: спокойный сеанс помогает нервной системе переключиться и выдохнуть.', 'When your whole body is tired, rhythm matters more than force: a calm session helps the nervous system switch off and exhale.', 'عندما يكون الجسم كله متعباً، يكون الإيقاع أهم من القوة: جلسة هادئة تساعد الجهاز العصبي على الاسترخاء والتنفّس.'],
 ];
 
 const translations = new Map(translationRows.map((row) => [row[0], row]));
@@ -178,8 +240,12 @@ function setLanguage(language) {
   const languageName = languageSelect.querySelector('.language-name');
   languageName.textContent = selectedLanguage.querySelector('span').textContent;
   languageName.lang = currentLanguage;
+  languageSelect.setAttribute('aria-label', translate('Язык сайта') + ': ' + languageName.textContent);
   languageButtons.forEach((button) => button.setAttribute('aria-pressed', String(button === selectedLanguage)));
   updateMenuLabel();
+  window.updateServiceLinks?.();
+  window.refreshQuiz?.();
+  window.fixPriceSpacing?.();
   try { localStorage.setItem('tamer-language', currentLanguage); } catch { /* Storage may be disabled. */ }
 }
 
